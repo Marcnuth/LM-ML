@@ -40,9 +40,8 @@ def erect(img, angels=(-45, 45, 5), split=4):
                        _max_connected_ratio(tmp_4)
         ))
 
-    print '====>'
-    print sorted(scores, key=lambda s : np.std([s[1], s[2], s[3], s[4]]))
-    print sorted(scores, key=lambda s : np.mean([s[1], s[2], s[3], s[4]]), reverse = True)
+
+    #sorted(scores, key=lambda s : np.mean([s[1], s[2], s[3], s[4]]), reverse = True)
     return sorted(scores, key=lambda s : np.mean([s[1], s[2], s[3], s[4]]), reverse = True)[0][0]
 
 def _max_connected_ratio(img):
