@@ -14,6 +14,8 @@ def split_and_show(filename):
     #convert to 2-D array first
     img_gray = color.rgb2gray(img)
 
+
+    # using 200 as the threshold
     #convert to black background & white foreground
     #in skimage array, black is 0
     img_bw = np.where(img_gray > np.mean(img_gray),0.0 ,1.0)
@@ -37,9 +39,8 @@ def split_and_show(filename):
 
 
     #show the result
-    xplt.show([img_bw, img_rotate, img_bw, img_rotate,
-               img1_1, img2_1, img3_1, img4_1,
-               img1_2, img2_2, img3_2, img4_2], 3, 4)
+    xplt.show([img, skeletonize(img_bw), img_bw, img_rotate,
+               img1_2, img2_2, img3_2, img4_2], 2, 4)
 
 
 '''
@@ -66,4 +67,4 @@ This algorithm is good for unconnected captcha or connected but no coincide line
 
 ''' 
 if __name__ == '__main__':
-    split_and_show('../data/599.jpeg')
+    split_and_show('../data/2257.jpeg')
